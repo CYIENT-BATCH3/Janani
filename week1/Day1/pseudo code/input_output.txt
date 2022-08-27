@@ -1,0 +1,10 @@
+/*
+*program to learn the scanf printf integar number and floating number
+*input 2 number and assighn it into 2 variable one in integar and other in float
+*/
+
+1.start the program
+2.get input
+3.input values to 2 variable using scanf
+4.output some random string
+5.value input from user as output
