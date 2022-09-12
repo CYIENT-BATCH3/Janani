@@ -1,0 +1,128 @@
+//home sensor:
+#include <stdio.h>
+
+
+void temper(int *tempe);//function prototype 
+void hum(int *humi);//function prototype
+void wat(int *wate);//function prototype
+int main()
+{
+    int temp,humid,water;//declaring variable
+    int *tempe=&temp;//declaring pointer
+    int *humi=&humid;//declaring pointer
+    int *wate=&water;//declaring pointer
+    temper(&temp);//calling temper function using pass by reference method
+    hum(&humid);//calling humid function using pass by reference method
+    wat(&water);//calling wat function using pass by reference method
+    hum(&humid);//calling humid function using pass by reference method
+    temper(&temp);//calling temper function using pass by reference method
+    wat(&water);//calling wat function using pass by reference method
+    wat(&water);//calling wat function using pass by reference method
+    temper(&temp);//calling temper function using pass by reference method
+    hum(&humid);//calling humid function using pass by reference method
+    temper(&temp);//calling temper function using pass by reference method
+    hum(&humid);//calling humid function using pass by reference method
+    wat(&water);//calling wat function using pass by reference method
+    
+}
+void temper(int *tempe)//defining temp function
+{
+    
+    printf("\nenter temparature\n");
+  scanf("%d",tempe);//reading input
+    printf("\n temparature is %d \n",*tempe);//printning the output
+}
+void hum(int *humi)
+{
+    
+    printf("\nenter humidity \n");
+  scanf("%d",humi);//reading input
+    printf("\n humidity is %d \n",*humi);//printting output
+    
+    
+}
+void wat(int *wate)
+{
+    
+    printf("\nenter water \n");
+  scanf("%d",wate);//reading input
+    printf("\n water level  is %d \n",*wate);    
+}
+
+
+//WAP To print 10 4 digit random numbers
+
+1.start
+2.finding random numbers
+3.checking if it is 4 digit
+4.printning the numbers
+
+#include<stdio.h>
+#include<stdlib.h>//including stdlib header file
+
+void main()
+{
+    
+    int count=10,num;//declaring variables
+    while(count>0)//checking count greater than 0
+   {
+       
+       num=(rand()%9999);//finding random numbers and assigning to num
+      if(num>1000)//checking if the num is 4 digit
+      {
+          printf("\n%d",num);//printning num
+
+   count--;//decrementing count
+}
+   }
+}
+
+accolemeter :
+#include <stdio.h>
+struct acc
+{
+    int x;
+    int y;
+    int z;
+}sen[5];
+int main()
+{
+    int x1=0,y1=0,z1=0;
+    struct acc sen[5];
+    int i;
+    for( int i=0;i<5;i++)
+    {
+        printf("Enter the values for each number");
+        scanf("%d %d %d",&sen[i].x,&sen[i].y,&sen[i].z);
+    }
+    for(i=1;i<=5;i++)
+    {
+        x1=x1+(sen[i].x);
+        y1=y1+(sen[i].y);
+        z1=z1+(sen[i].z);
+    }
+    x1=x1/5;
+    y1=y1/5;
+    z1=z1/5;
+    if(x1==100&&y1==250&&z1==300)
+    {
+        printf("it is left\n");
+    }
+    else if(x1==300&&y1==250&&z1==100)
+    {
+        printf("it is right\n");
+    }
+    else if(x1==100&&y1==100&&z1==300)
+    {
+        printf("it is forward\n");
+    }
+    else if(x1==250&&y1==800&&z1==200)
+    {
+        printf("it is backward\n");
+    }
+    else
+    {
+        printf("it is invalid");
+    }
+    
+}
